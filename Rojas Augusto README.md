@@ -1,0 +1,1 @@
+Actualice la base de datos con nombres y mejores relaciones, se debe abrir el script "dbReservasAct.sql"
