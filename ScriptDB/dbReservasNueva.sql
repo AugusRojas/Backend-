@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `reservacionesbar`.`reservaciones` (
   `nombreReservacion` VARCHAR(45) NULL DEFAULT NULL,
   `apellidoReservacion` VARCHAR(45) NULL DEFAULT NULL,
   `mailReservacion` VARCHAR(45) NULL DEFAULT NULL,
-  `fechaReservacion` DATE NULL DEFAULT NULL,
+  `fechaReservacion` DATETIME NULL DEFAULT NULL,
   `cantidadPersonas` INT NULL DEFAULT NULL,
   PRIMARY KEY (`idReservacion`))
 ENGINE = InnoDB

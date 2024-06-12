@@ -5,7 +5,7 @@ const conexion = mysql.createConnection({
     host : "",
     user: "",
     password: "",
-    database: ""
+    database: "reservacionesbar"
 })
 
 export default conexion
