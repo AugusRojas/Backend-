@@ -12,3 +12,7 @@ Tambien agregue valores y algunos comandos para facilitarles las tareas de consu
 Actualización 12/06/24 17:53
 Agregada varias funciones de lecturas, debemos agilizar las funciones para insersion de datos 
 
+#Reinoso Lisandro :
+Actualizacion 14/06/2024 
+Agregue los campos telefonoReservacion, horaReservacion a la tabla reservaciones.
+Subo el servdor de correo, con index.html simple para prueba, consta de dos correos uno para confirmar reservacion y el segundo para decir que esta la reserva confirmada
