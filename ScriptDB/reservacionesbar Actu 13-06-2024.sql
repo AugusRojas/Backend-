@@ -99,7 +99,7 @@ CREATE TABLE `reservaciones` (
   `nombreReservacion` varchar(45) DEFAULT NULL,
   `apellidoReservacion` varchar(45) DEFAULT NULL,
   `mailReservacion` varchar(45) DEFAULT NULL,
-  `telefonoReservacion` int(10) DEFAULT NULL,
+  `telefonoReservacion` varchar(25) DEFAULT NULL,
   `fechaReservacion` date DEFAULT NULL,
   `horaReservacion` time DEFAULT NULL,
   `cantidadReservacion` int(11) DEFAULT NULL

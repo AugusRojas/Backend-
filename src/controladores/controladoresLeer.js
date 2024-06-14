@@ -1,4 +1,4 @@
-import  conexion  from './basedatos.js'
+import  conexion  from '../BaseDatos/basedatos.js'
 
 //Aqui van las funciones que van a manejar las rutas y las que van a contener
 //las consultas sql
@@ -63,9 +63,6 @@ const leerSectores = (req, res) =>{
     )
 }
 
-
-
-//Funciones de inserción 
 
 
 export default {

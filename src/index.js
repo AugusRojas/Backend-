@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
-import router from './rutas.js'
+import router from './Rutas/rutas.js'
 import app from './app.js'
 
 app.use(express.json());
