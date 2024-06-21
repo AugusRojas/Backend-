@@ -1,4 +1,4 @@
-import conexion from "../BaseDatos/basedatos.js";
+import conexion from "../servicios/basedatos.js";
 import nodemailer from 'nodemailer'
 import fs from 'fs'
 import path from 'path'
@@ -8,9 +8,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 
+
 const insertarReservacion = (req, res)=>{
     let datosRecibidos = req.body
-    console.log(datosRecibidos)
 
     const { nombre, apellido, correo, telefono, fecha, hora, cantidad } = req.body
 
@@ -158,5 +158,6 @@ const EnviodeCorreo = async (correo, confirmacionUrl)=>{
         console.error("Error al enviar el correo de confirmación:", error)
     }
 }
+
 
 export default {insertarReservacion, obtenerDatosCorreo}

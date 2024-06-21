@@ -22,3 +22,10 @@ Subo el servdor de correo, con index.html simple para prueba, consta de dos corr
 #Prieto Matias-
 Actualizacion 14/06/2024
 Reestructuracion del proyecto para mejor organizacion entre los modulos de exportacion. Reconfiguracion de la base de datos, modifiqué la columna telefono de la tabla reservaciones, estaba en int(10) y lo modifique a varchar(25) para que permita ingresar codigo de area. Incorporacion del servicio de correo. Creacion de carpeta 'Public' para servir archivos estaticos que nos permitiran mostrarlo en el correo. Ante cualquier duda o error consultar.
+
+
+#Prieto Matias-
+Actualizacion 21/06/2024
+Agregada las funcionalidad de eliminar mozos, actualizar mozos, y eliminar reservacion. Cambio de la
+carpeta 'basededatos' por 'servicios'. Agregada tambien la consulta de leer mesas para comprobaciones
+desde el lado del administrador 
