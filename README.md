@@ -29,3 +29,7 @@ Actualizacion 21/06/2024
 Agregada las funcionalidad de eliminar mozos, actualizar mozos, y eliminar reservacion. Cambio de la
 carpeta 'basededatos' por 'servicios'. Agregada tambien la consulta de leer mesas para comprobaciones
 desde el lado del administrador 
+
+#Prieto Matias-
+Actualizacion 22/06/2024
+Agregada la funcion de insertar mozos

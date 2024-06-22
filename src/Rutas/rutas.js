@@ -16,6 +16,7 @@ router.get("/obtener/datos/:correoURL",controladoresInsertar.obtenerDatosCorreo)
 router.get("/leer/mozos", controladoresLeer.leerMozos);
 router.get("/leer/mesas", controladoresLeer.leerMesas);
 router.post("/insertar/reservacion", controladoresInsertar.insertarReservacion);
+router.post('/insertar/mozos', controladoresInsertar.insertarMozos)
 router.put("/actualizar/mozos", controladoresActualizar.actualizarMozos);
 router.delete("/eliminar/mozos/:id", controladoresEliminar.eliminarMozo);
 router.delete("/eliminar/reservaciones/:id",controladoresEliminar.eliminarReservacion);
