@@ -1,18 +1,16 @@
-import express from 'express'
-import cors from 'cors'
-import bodyParser from 'body-parser'
-import router from './Rutas/rutas.js'
-import app from './app.js'
+import express from "express";
+import cors from "cors";
+import bodyParser from "body-parser";
+import router from "./Rutas/rutas.js";
+import app from "./app.js";
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }))
-app.use(cors())
-app.use(bodyParser.json())
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+app.use(bodyParser.json());
 
-app.use('/api', router)
+app.use("/api", router);
 
-app.listen(app.get('port'), () => {
-    console.log(`Escuchando puerto ${app.get('port')}`)
-})
-
-
+app.listen(app.get("port"), () => {
+  console.log(`Escuchando puerto ${app.get("port")}`);
+});
