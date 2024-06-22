@@ -1,7 +1,7 @@
-import express from 'express'
+import express from "express";
 
-const app = express()
+const app = express();
 
-app.set('port', 3000)
+app.set("port", 3000);
 
-export default app
+export default app;
