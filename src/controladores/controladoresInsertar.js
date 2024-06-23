@@ -9,6 +9,7 @@ const __dirname = path.dirname(__filename);
 
 const insertarReservacion = (req, res) => {
   let datosRecibidos = req.body;
+  console.log(datosRecibidos)
 
   const { nombre, apellido, correo, telefono, fecha, hora, cantidad } =
     datosRecibidos;
@@ -46,7 +47,6 @@ const insertarReservacion = (req, res) => {
             return res.send("Error al insertar la reservación");
           }
 
-          conexion.end();
 
           try {
             EnviodeCorreo(correo, confirmationUrl); // Enviar el primer correo con la URL de confirmación

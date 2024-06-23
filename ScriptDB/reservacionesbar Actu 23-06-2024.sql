@@ -159,7 +159,7 @@ INSERT INTO `mozos` (`idMozo`, `nombreMozo`, `apellidoMozo`, `telefonoMozo`, `ma
 --
 
 CREATE TABLE `reservaciones` (
-  `idReservacion` int(11) NOT NULL,
+  `idReservacion` int(11) NOT NULL AUTO_INCREMENT,
   `nombreReservacion` varchar(45) DEFAULT NULL,
   `apellidoReservacion` varchar(45) DEFAULT NULL,
   `mailReservacion` varchar(45) DEFAULT NULL,
