@@ -103,6 +103,26 @@ CREATE TABLE `mesas` (
   `idReservacion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+
+-- Alterar la tabla `mesas` para permitir que `idReservacion` sea NULL
+
+ALTER TABLE `mesas`
+MODIFY COLUMN `idReservacion` int(11) NULL DEFAULT NULL;
+
+
+INSERT INTO `mesas` (`idMesas`, `cantidadMesas`, `estadoMesas`, `idSectores`, `idReservacion`) VALUES
+(1, 4, 'Libre', 1, NULL),
+(2, 4, 'Libre', 1, NULL),
+(3, 4, 'Libre', 1, NULL),
+(4, 4, 'Libre', 2, NULL),
+(5, 4, 'Libre', 2, NULL),
+(6, 4, 'Libre', 2, NULL),
+(7, 4, 'Libre', 2, NULL),
+(8, 4, 'Libre', 3, NULL),
+(9, 4, 'Libre', 3, NULL),
+(10, 4, 'Libre', 3, NULL);
+
+
 -- --------------------------------------------------------
 
 --
@@ -117,6 +137,20 @@ CREATE TABLE `mozos` (
   `mailMozo` varchar(100) DEFAULT NULL,
   `idSector` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+ALTER TABLE `mozos`
+MODIFY COLUMN `idMozo` int(11) NOT NULL AUTO_INCREMENT,
+ADD PRIMARY KEY (`idMozo`);
+ALTER TABLE `mozos`
+MODIFY COLUMN `idSector` int(11) NULL;
+
+
+INSERT INTO `mozos` (`idMozo`, `nombreMozo`, `apellidoMozo`, `telefonoMozo`, `mailMozo`, `idSector`) VALUES
+(1, 'Juan', 'Perez', '1122334455', 'juanperez@example.com', 1),
+(2, 'Maria', 'Gonzalez', '1122334466', 'mariagonzalez@example.com', 2),
+(3, 'Carlos', 'Lopez', '1122334477', 'carloslopez@example.com', 3),
+(4, 'Ana', 'Martinez', '1122334488', 'anamartinez@example.com', 4);
+
 
 -- --------------------------------------------------------
 
@@ -140,7 +174,10 @@ CREATE TABLE `reservaciones` (
 --
 
 INSERT INTO `reservaciones` (`idReservacion`, `nombreReservacion`, `apellidoReservacion`, `mailReservacion`, `telefonoReservacion`, `fechaReservacion`, `horaReservacion`, `cantidadReservacion`) VALUES
-(2, 'nombre_ejemplo', 'apellido_ejemplo', 'lisandoreinoso075@gmail.com', 0, '2024-06-15', NULL, 1)
+(2, 'nombre_ejemplo', 'apellido_ejemplo', 'lisandoreinoso075@gmail.com', 0, '2024-06-15', '22:30:00', 1),
+(3, 'María', 'López', 'marialopez@example.com', 1122334477, '2024-06-20', '19:30:00', 3),
+(4, 'Luis', 'González', 'luisgonzalez@example.com', 1122334488, '2024-06-22', '20:00:00', 2),
+(5, 'Ana', 'Martínez', 'anamartinez@example.com', 1122334499, '2024-06-25', '18:00:00', 4);
 
 
 -- --------------------------------------------------------
@@ -153,6 +190,13 @@ CREATE TABLE `sectores` (
   `idSector` int(11) NOT NULL,
   `nombreSector` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+INSERT INTO `sectores` (`idSector`, `nombreSector`) VALUES
+(1, 'Interior'),
+(2, 'Exterior'),
+(3, 'Segundo Piso');
+
 
 --
 -- Índices para tablas volcadas

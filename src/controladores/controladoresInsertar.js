@@ -170,20 +170,26 @@ const EnviodeCorreoConfirmacion = async (correo, datosDeReservacion) => {
 };
 
 const insertarMozos = (req,res) =>{
-  const {nombreMozo, apellidoMozo, telefonoMozo, mailMozo, idSector} = req.body
-  try{conexion.query(`INSERT INTO mozos (nombreMozo, apellidoMozo, telefonoMozo, mailMozo, idSector) VALUES(${nombreMozo}, ${apellidoMozo}, ${telefonoMozo}, ${mailMozo}, ${idSector})`,
-    (err, results)=>{
-      if(err){
-        console.log('Error en insertarMozos: ', err)
-      }
-      else{
-        res.json(results)
-      }
+  const { nombreMozo, apellidoMozo, telefonoMozo, mailMozo, idSector } = req.body;
+
+try {
+  const sql = "INSERT INTO mozos (nombreMozo, apellidoMozo, telefonoMozo, mailMozo, idSector) VALUES (?, ?, ?, ?, ?)";
+  const values = [nombreMozo, apellidoMozo, telefonoMozo, mailMozo, idSector];
+
+  conexion.query(sql, values, (err, results) => {
+    if (err) {
+      console.log('Error en insertarMozos: ', err);
+      res.status(500).json({ error: 'Error en la consulta SQL' });
+    } else {
+      console.log('Inserción exitosa de mozo');
+      res.json(results);
     }
-  )}
-  catch(error){
-    console.log('Error en la consulta: ', error)
-  }
+  });
+} catch (error) {
+  console.log('Error en la consulta: ', error);
+  res.status(500).json({ error: 'Error en la consulta' });
+}
+
 
 }
 

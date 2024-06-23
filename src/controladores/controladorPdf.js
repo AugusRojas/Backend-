@@ -52,10 +52,10 @@ const generarPdf = (req, res) => {
                 `).join('');
 
                 // Leer el archivo HTML
-                let menu = fs.readFileSync(path.join(__dirname, '../public/menu.html'), 'utf-8');
+                let menu = fs.readFileSync(path.join(__dirname, '../Public/menu.html'), 'utf-8');
 
                 // Leer el archivo CSS y agregarlo al HTML
-                let css = fs.readFileSync(path.join(__dirname, '../public/menu.css'), 'utf-8');
+                let css = fs.readFileSync(path.join(__dirname, '../Public/menu.css'), 'utf-8');
                 menu = `<style>${css}</style>` + menu;
 
                 // Reemplazar los marcadores en el HTML con el contenido dinámico generado

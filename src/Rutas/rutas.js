@@ -20,6 +20,7 @@ router.get("/menuPDF",controladorPdf.generarPdf )
 router.post("/insertar/reservacion", controladoresInsertar.insertarReservacion);
 router.post('/insertar/mozos', controladoresInsertar.insertarMozos)
 router.put("/actualizar/mozos", controladoresActualizar.actualizarMozos);
+router.put('/asignar/mesas', controladoresActualizar.asignarMesa)
 router.delete("/eliminar/mozos/:id", controladoresEliminar.eliminarMozo);
 router.delete("/eliminar/reservaciones/:id",controladoresEliminar.eliminarReservacion);
 
