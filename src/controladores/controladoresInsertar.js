@@ -134,29 +134,34 @@ const EnviodeCorreoConfirmacion = async (correo, datosDeReservacion) => {
   });
 
   const htmlBody = `
-        <p>Tu reservación ha sido confirmada.</p>
-        <p><strong>Nombre:</strong> ${datosDeReservacion.nombreReservacion}</p>
-        <p><strong>Apellido:</strong> ${datosDeReservacion.apellidoReservacion}</p>
-        <p><strong>Correo:</strong> ${datosDeReservacion.mailReservacion}</p>
-        <p><strong>Teléfono:</strong> ${datosDeReservacion.telefonoReservacion}</p>
-        <p><strong>Fecha:</strong> ${datosDeReservacion.fechaReservacion}</p>
-        <p><strong>Hora:</strong> ${datosDeReservacion.horaReservacion}</p>
-        <p><strong>Cantidad:</strong> ${datosDeReservacion.cantidadReservacion}</p>
-        <a href="https://ibb.co/cwzcBjg"><img src="https://i.ibb.co/cwzcBjg/vaca.jpg" alt="vaca" border="0"></a>`;
+        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333333; padding: 20px;">
+        <h2 style="text-align: center;">Reservación Confirmada</h2>
+        <p>Hola ${datosDeReservacion.nombreReservacion},</p>
+        <p>Tu reservación ha sido confirmada para el día <strong>${datosDeReservacion.fechaReservacion}</strong> a horas <strong>${datosDeReservacion.horaReservacion}</strong>.</p>
+        <p><strong>Detalles de la Reservación:</strong></p>
+        <ul style="list-style-type: none; padding: 0;">
+            <li><strong>Nombre:</strong> ${datosDeReservacion.nombreReservacion}</li>
+            <li><strong>Apellido:</strong> ${datosDeReservacion.apellidoReservacion}</li>
+            <li><strong>Cantidad de mesas reservadas:</strong> ${datosDeReservacion.cantidadReservacion}</li>
+        </ul>
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="https://ibb.co/cwzcBjg" style="display: inline-block; text-decoration: none; color: #007bff;">
+                <img src="https://i.ibb.co/cwzcBjg/vaca.jpg" alt="vaca" style="max-width: 100%; height: auto; border: 0;">
+            </a>
+        </div>
+        <p style="text-align: center; margin-top: 20px;">Gracias por reservar con nosotros.</p>
+        <footer style="background-color: #f8f9fa; padding: 10px; text-align: center; margin-top: 20px; border-top: 1px solid #ddd;">
+            <p>Este correo electrónico ha sido enviado por el equipo de &copy; Vacas Food.</p>
+            <p><a href="#" style="color: #007bff;">Política de Privacidad</a> | <a href="#" style="color: #007bff;">Términos de Servicio</a></p>
+        </footer>
+    </div>`;
 
   try {
     await transporter.sendMail({
       from: "👻" + correo, // sender address,
       to: correo, // list of receivers
       subject: "Reservación confirmada", // Subject line
-      text: `Tu reservación ha sido confirmada.\n
-                   Nombre: ${datosDeReservacion.nombreReservacion}\n
-                   Apellido: ${datosDeReservacion.apellidoReservacion}\n
-                   Correo: ${datosDeReservacion.mailReservacion}\n
-                   Teléfono: ${datosDeReservacion.telefonoReservacion}\n
-                   Fecha: ${datosDeReservacion.fechaReservacion}\n
-                   Hora: ${datosDeReservacion.horaReservacion}\n
-                   Cantidad: ${datosDeReservacion.cantidadReservacion}`, // plain text body
+      text: ``, // plain text body
       html: htmlBody, // html body
     });
   } catch (error) {

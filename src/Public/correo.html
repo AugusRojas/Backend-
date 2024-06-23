@@ -3,12 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="correo.css">
-    <title>Estructura</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            color: black; 
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #f8f9fa; 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: black; 
+        }
+        .header, .footer {
+            text-align: center;
+        }
+        .header h2, .footer p {
+            margin: 0;
+        }
+        .content {
+            text-align: center;
+            line-height: 1.6;
+            color: #333333; 
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #ffffff !important; 
+            background-color: #007bff;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .contact-info, .location-info {
+            width: 45%;
+            display: inline-block;
+            vertical-align: top;
+            padding: 0;
+        }
+        .contact-info {
+            text-align: left;
+            padding-left: 10px;
+        }
+        .location-info {
+            text-align: right;
+            padding-right: 10px;
+        }
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .footer p {
+            color: #777777;
+            font-size: 14px;
+        }
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <title>Confirmación de Reservación</title>
 </head>
 <body>
-    <h2>Para confirmar la reservacion haga click en el siguiente enlace</h2>
-    <a href="{{confirmacionUrl}}">confirmar</a>
-    
+    <div class="container">
+        <div class="header">
+            <h2>Confirmación de Reservación</h2>
+        </div>
+        <div class="content">
+            <p>Hola,</p>
+            <p>Para confirmar tu reservación, por favor haz clic en el siguiente enlace:</p>
+            <a href="{{confirmacionUrl}}" class="btn">Confirmar Reservación</a>
+            <p>Si no realizaste esta solicitud, puedes ignorar este correo.</p>
+            <div class="image-container">
+                <a href="https://ibb.co/cwzcBjg"><img src="https://i.ibb.co/cwzcBjg/vaca.jpg" alt="Imagen de vaca"></a>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <div class="contact-info">
+                    <h3>Contacto:</h3>
+                    <p>
+                        <u>Número:</u> <a href="tel:+5493811234567" style="color: #007bff;">+54 9 (381) 123-4567</a><br>
+                        <u>Email:</u> <a href="mailto:tuvaquita@gmail.com" style="color: #007bff;">tuvaquita@gmail.com</a>
+                    </p>
+                </div>
+                <div class="location-info">
+                    <h3>Encuéntranos en:</h3>
+                    <p>
+                        Av. Marco Paz 649<br>
+                        Tucumán, Argentina
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Este correo electrónico ha sido enviado por el equipo de &copy; Vacas Food.</p>
+            <p><a href="#" style="color: #007bff;">Política de Privacidad</a> | <a href="#" style="color: #007bff;">Términos de Servicio</a></p>
+        </div>
+    </div>
 </body>
 </html>

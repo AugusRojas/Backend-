@@ -3,6 +3,7 @@ import controladoresLeer from "../controladores/controladoresLeer.js";
 import controladoresInsertar from "../controladores/controladoresInsertar.js";
 import controladoresEliminar from "../controladores/controladoresEliminar.js";
 import controladoresActualizar from "../controladores/controladoresActualizar.js";
+import controladorPdf from "../controladores/controladorPdf.js"
 
 const router = Router();
 
@@ -15,6 +16,7 @@ router.get("/leer/sectores", controladoresLeer.leerSectores);
 router.get("/obtener/datos/:correoURL",controladoresInsertar.obtenerDatosCorreo);
 router.get("/leer/mozos", controladoresLeer.leerMozos);
 router.get("/leer/mesas", controladoresLeer.leerMesas);
+router.get("/menuPDF",controladorPdf.generarPdf )
 router.post("/insertar/reservacion", controladoresInsertar.insertarReservacion);
 router.post('/insertar/mozos', controladoresInsertar.insertarMozos)
 router.put("/actualizar/mozos", controladoresActualizar.actualizarMozos);
