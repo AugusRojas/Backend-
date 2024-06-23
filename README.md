@@ -33,3 +33,7 @@ desde el lado del administrador
 #Prieto Matias-
 Actualizacion 22/06/2024
 Agregada la funcion de insertar mozos
+
+#Reinoso Lisandro - 23/06/2024  
+Agregada los estilos a los dos correos, agregada nuevos campos a la tabla bebidas con imgBebida, nombreBebida, precioBebida, descripcionBebida a la tabla comidas se le agrega el campo comidaPrecio. estas tablas continen registros de comidas y bebidas en el script reservacionesbar Actu 23-06-2024.sql.
+Agregado tambien el controlador para generar el menu PDF, (al instalar puppeteer, se pone los comandos "set PUPPETEER_SKIP_DOWNLOAD=true && npm install puppeteer") libreria para generar PDF
