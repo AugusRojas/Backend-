@@ -42,3 +42,8 @@ Agregado tambien el controlador para generar el menu PDF, (al instalar puppeteer
 #Prieto Matias-
 Actualizacion 23/06/2024
 Corregido varios errores al momento de la inserción de datos. Agregada la funcion de asignacion de mesas. 
+
+
+#Prieto Matias-
+Actualizacion 24/06/2024
+Añadida la funcion de iniciar sesion, base de datos actualizada, tabla 'administradores' agregada

@@ -197,6 +197,36 @@ INSERT INTO `sectores` (`idSector`, `nombreSector`) VALUES
 (2, 'Exterior'),
 (3, 'Segundo Piso');
 
+--tabla admin
+
+CREATE TABLE `administrador` (
+  `idAdministrador` int(11) NOT NULL AUTO_INCREMENT,
+  `usuario` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `contraseña` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`idAdministrador`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+ALTER TABLE `mesas`
+  ADD COLUMN `idAdministrador` int(11) DEFAULT NULL,
+  ADD CONSTRAINT `fk_idAdministrador` FOREIGN KEY (`idAdministrador`) REFERENCES `administrador` (`idAdministrador`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+
+ALTER TABLE `carta`
+  ADD COLUMN `idAdministrador` int(11) DEFAULT NULL,
+  ADD CONSTRAINT `fk_idAdministrador_carta` FOREIGN KEY (`idAdministrador`) REFERENCES `administrador` (`idAdministrador`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+
+
+INSERT INTO `administrador` (`usuario`,`email`, `contraseña`) VALUES
+('AndrésVaca','tuvaquita@gmail.com', 'tuvaqutasfood');
+
+INSERT INTO `administrador` (`usuario`,`email`, `contraseña`) VALUES
+('elpatron','tupatron@gmail.com', 'patronfood');
+
+
+SELECT * FROM administrador WHERE usuario = 'elpatron' AND contraseña = 'patronfood';
 
 --
 -- Índices para tablas volcadas
